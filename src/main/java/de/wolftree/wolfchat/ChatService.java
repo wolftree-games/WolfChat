@@ -1,3 +1,9 @@
+/*
+ * WolfChat
+ * Copyright (c) 2025 Andi S.
+ * Licensed under the MIT License
+*/
+
 package de.wolftree.wolfchat;
 
 import de.wolftree.wolfchat.command.Commands;
