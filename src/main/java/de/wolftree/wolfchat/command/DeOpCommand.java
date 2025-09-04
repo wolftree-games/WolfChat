@@ -22,7 +22,6 @@ public class DeOpCommand implements ICommand {
       String roomName = args[0];
       String opNickname = args[1];
 
-      //fetch member from target room
       Room room = chatService.rooms().getRoomByTitle(roomName);
       Member opMember = chatService.members().getMemberByTitle(opNickname);
 
