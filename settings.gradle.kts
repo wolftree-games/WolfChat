@@ -1,2 +1,2 @@
-rootProject.name = "WolfChat"
+rootProject.name = "wolfchat"
 

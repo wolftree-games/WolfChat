@@ -40,9 +40,15 @@ repositories {
 }
 
 dependencies {
-    implementation("org.slf4j:slf4j-api:2.0.9")
+    implementation("org.slf4j:slf4j-api:2.0.17")
     implementation("org.tinylog:slf4j-tinylog:2.7.0")
-    implementation("org.tinylog:tinylog-impl:2.6.2")
+    implementation("org.tinylog:tinylog-impl:2.7.0")
+
+    //Apache Commons
+    implementation("commons-io:commons-io:2.20.0")
+
+    //jackson
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.20.0")
 
     //Annotations
     compileOnly("org.jetbrains:annotations:24.0.0")
@@ -64,7 +70,7 @@ publishing {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
             groupId = project.group.toString()
-            artifactId = "WolfChat"
+            artifactId = "wolfchat"
             version = project.version.toString()
         }
     }

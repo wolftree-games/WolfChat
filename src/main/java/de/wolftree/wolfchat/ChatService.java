@@ -2,10 +2,11 @@
  * WolfChat
  * Copyright (c) 2025 Andi S.
  * Licensed under the MIT License
-*/
+ */
 
 package de.wolftree.wolfchat;
 
+import de.wolftree.config.Config;
 import de.wolftree.wolfchat.command.Commands;
 import de.wolftree.wolfchat.interfaces.IChatTransport;
 import org.slf4j.Logger;
@@ -23,10 +24,12 @@ public class ChatService {
    public ChatService(String id, IChatTransport transport)  {
       this.id = id;
       this.transport = transport;
+
+      Config cfg = new Config("default");
    }
 
    public void handleMessage(String userId, String msg) {
-      logger.debug("msg from id {} msg {}", userId, msg);
+      logger.info("msg from id {} msg {}", userId, msg);
       Member member = members.getMemberById(userId);
       String response = commands.execute(member, msg);
       if (response != null) {

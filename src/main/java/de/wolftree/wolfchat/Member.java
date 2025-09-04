@@ -1,6 +1,6 @@
 package de.wolftree.wolfchat;
 
-import de.wolftree.Utils.Validation;
+import de.wolftree.utils.Validation;
 
 public class Member {
    private String id;

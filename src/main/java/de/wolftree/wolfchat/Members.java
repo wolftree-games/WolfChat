@@ -1,7 +1,7 @@
 package de.wolftree.wolfchat;
 
 
-import de.wolftree.Utils.UniqueId;
+import de.wolftree.utils.UniqueId;
 import java.util.concurrent.ConcurrentHashMap;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;

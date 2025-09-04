@@ -1,4 +1,4 @@
-package de.wolftree.Utils;
+package de.wolftree.utils;
 
 import org.jetbrains.annotations.NotNull;
 

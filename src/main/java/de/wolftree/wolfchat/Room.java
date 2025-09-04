@@ -1,7 +1,7 @@
 package de.wolftree.wolfchat;
 
-import de.wolftree.Utils.UniqueId;
-import de.wolftree.Utils.Validation;
+import de.wolftree.utils.UniqueId;
+import de.wolftree.utils.Validation;
 import de.wolftree.wolfchat.enums.OpMode;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
