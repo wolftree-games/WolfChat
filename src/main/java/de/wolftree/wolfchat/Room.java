@@ -43,6 +43,10 @@ public class Room {
       return false;
    }
 
+   protected boolean changeMemberOpMode(Member member, OpMode operatorMode){
+      return this.members.put(member,operatorMode) != null;
+   }
+
    protected boolean removeMember(Member member){
       if (this.members.remove(member) != null){
          return true;
@@ -81,7 +85,7 @@ public class Room {
       return opMode;
    }
 
-   public boolean hasOpMode(Member member, OpMode opMode){
+   public boolean hasMemberOpMode(Member member, OpMode opMode){
       OpMode op = members.get(member);
       if (op == null)
          return false;

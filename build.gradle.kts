@@ -5,11 +5,15 @@ plugins {
     id("maven-publish")
 }
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
 fun loadVersion(): String {
     val propsFile = file("version.properties")
     val props = Properties()
 
-    // Datei automatisch anlegen, falls sie nicht existiert
     if (propsFile.exists()) {
         props.load(propsFile.inputStream())
     } else {
@@ -22,10 +26,8 @@ fun loadVersion(): String {
     val minor = props["minor"].toString().toInt()
     var patch = props["patch"].toString().toInt()
 
-    // Patch erhöhen
     patch++
 
-    // Datei zurückschreiben
     props["patch"] = patch.toString()
     props.store(propsFile.outputStream(), "Version file for de.wolftree.WolfChat")
 
@@ -74,4 +76,8 @@ publishing {
             version = project.version.toString()
         }
     }
+}
+
+tasks.withType<Javadoc> {
+    (options as StandardJavadocDocletOptions).addStringOption("Xdoclint:none", "-quiet")
 }

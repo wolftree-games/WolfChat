@@ -31,8 +31,8 @@ public class KickCommand implements ICommand {
       Member kickMember = chatService.members().getMemberByTitle(memberName);
 
       if (room != null && room.hasMember(member) && room.hasMember(kickMember) ){
-         if (room.hasOpMode(member, OpMode.OWNER) ||
-             room.hasOpMode(member, OpMode.OPERATOR)){
+         if (room.hasMemberOpMode(member, OpMode.OWNER) ||
+             room.hasMemberOpMode(member, OpMode.OPERATOR)){
 
             if (chatService.rooms().removeRoomMember(room, kickMember)){
                transport.sendToMember(kickMember.id(), Members.SERVER_ID, "you were removed from room "+roomName);
